@@ -27,13 +27,11 @@
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-toolbar>
     <main>
-      <v-content>
-        <v-container fluid fill-height>
-          <router-view/>
-        </v-container>
+      <v-content>      
+        <router-view/>        
       </v-content>
     </main>
     <v-footer color="indigo" app>
@@ -47,7 +45,8 @@ export default {
   name: 'app',
   data () {
     return {
-      drawer: true
+      drawer: true,
+      title: 'My Project'
     }
   }
 }
